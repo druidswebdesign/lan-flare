@@ -31,6 +31,7 @@ export default defineConfig({
     sitemap(),
     mdx(),
     icon({
+      iconDir: 'src/assets/icons', // <-- ADD THIS LINE HERE
       include: {
         tabler: ['*'],
         'flat-color-icons': [
@@ -72,7 +73,7 @@ export default defineConfig({
   ],
 
   image: {
-    domains: ['cdn.pixabay.com', 'images.unsplash.com'],
+    domains: ['cdn.pixabay.com', 'plus.unsplash.com', 'images.unsplash.com'],
     service: {
       entrypoint: 'astro/assets/services/sharp',
     },
