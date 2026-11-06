@@ -276,7 +276,7 @@ export const DESIGN_TOKENS = {
 
 ```astro
 ---
-import { DESIGN_TOKENS } from '~/design-tokens';
+import { DESIGN_TOKENS } from '@/design-tokens';
 ---
 
 <section class={DESIGN_TOKENS.spacing.section}>
@@ -345,7 +345,7 @@ const roundedClasses = {
 
 ```astro
 ---
-import Card from '~/components/ui/Card.astro';
+import Card from '@/components/ui/Card.astro';
 ---
 
 <Card variant="elevated" padding="lg" rounded="xl">
@@ -360,8 +360,8 @@ import Card from '~/components/ui/Card.astro';
 
 ```astro
 ---
-import Card from '~/components/ui/Card.astro';
-import Headline from '~/components/ui/Headline.astro';
+import Card from '@/components/ui/Card.astro';
+import Headline from '@/components/ui/Headline.astro';
 import Icon from 'astro-icon';
 
 export interface Feature {
@@ -415,7 +415,7 @@ const gridCols = {
 
 ```astro
 ---
-import FeatureGrid from '~/components/widgets/FeatureGrid.astro';
+import FeatureGrid from '@/components/widgets/FeatureGrid.astro';
 ---
 
 <FeatureGrid
@@ -493,11 +493,11 @@ Let's create a "Portfolio" page layout:
 
 ```astro
 ---
-import Layout from '~/layouts/Layout.astro';
-import Header from '~/components/widgets/Header.astro';
-import Footer from '~/components/widgets/Footer.astro';
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/widgets/Header.astro';
+import Footer from '@/components/widgets/Footer.astro';
 
-import type { MetaData } from '~/types';
+import type { MetaData } from '@/types';
 
 export interface Props {
   metadata?: MetaData;
@@ -544,8 +544,8 @@ const { metadata } = Astro.props;
 
 ```astro
 ---
-import PortfolioLayout from '~/layouts/PortfolioLayout.astro';
-import FeatureGrid from '~/components/widgets/FeatureGrid.astro';
+import PortfolioLayout from '@/layouts/PortfolioLayout.astro';
+import FeatureGrid from '@/components/widgets/FeatureGrid.astro';
 
 const metadata = {
   title: 'My Portfolio',
@@ -570,10 +570,10 @@ const metadata = {
 
 ```astro
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import CTA from '~/components/widgets/CallToAction.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import CTA from '@/components/widgets/CallToAction.astro';
 ---
 
 <Layout metadata={{ title: 'Page Title' }}>
@@ -617,7 +617,7 @@ metadata:
   openGraph:
     site_name: 'Your Brand Name'
     images:
-      - url: '~/assets/images/og-image.png' # 1200x628px
+      - url: '@/assets/images/og-image.png' # 1200x628px
         width: 1200
         height: 628
     type: website
@@ -729,7 +729,7 @@ Create blog posts in `src/data/post/`:
 publishDate: 2026-01-21T00:00:00Z
 title: 'My First Blog Post'
 excerpt: 'A compelling excerpt that appears in blog listings'
-image: '~/assets/images/blog/post-1.jpg'
+image: '@/assets/images/blog/post-1.jpg'
 category: 'Tutorials'
 tags:
   - astro
@@ -748,7 +748,7 @@ Your markdown content here. You can use:
 - **Bold text**
 - _Italic text_
 - [Links](https://example.com)
-- Images: ![Alt text](~/assets/images/example.jpg)
+- Images: ![Alt text](@/assets/images/example.jpg)
 - Code blocks
 
 ```javascript
@@ -772,8 +772,8 @@ More content...
 title: 'Interactive Blog Post'
 ---
 
-import Button from '~/components/ui/Button.astro';
-import Card from '~/components/ui/Card.astro';
+import Button from '@/components/ui/Button.astro';
+import Card from '@/components/ui/Card.astro';
 
 # Interactive Content with Components
 
@@ -799,7 +799,7 @@ Regular markdown continues below...
 ```astro
 ---
 import { Image } from 'astro:assets';
-import heroImage from '~/assets/images/hero.jpg';
+import heroImage from '@/assets/images/hero.jpg';
 ---
 
 <!-- ✅ GOOD: Automatic optimization -->
@@ -873,7 +873,7 @@ ls -lh dist/_astro/*.js
 
 ```astro
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from '@/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Specific Page Title',
@@ -887,7 +887,7 @@ const metadata = {
     type: 'article',
     images: [
       {
-        url: '~/assets/images/page-specific-og.jpg',
+        url: '@/assets/images/page-specific-og.jpg',
         width: 1200,
         height: 628,
       },
@@ -1129,7 +1129,7 @@ git push origin main
 />
 
 <!-- Repurpose Content widget as "About" section -->
-<Content title="About Us" image={{ src: '~/assets/images/team.jpg' }}>
+<Content title="About Us" image={{ src: '@/assets/images/team.jpg' }}>
   <Fragment slot="content"> Our story goes here... </Fragment>
 </Content>
 ```
@@ -1192,7 +1192,7 @@ npm run check:astro
 **3. Images not loading:**
 
 ```astro
-<!-- ✅ Correct: Use ~ for src/ imports -->import image from '~/assets/images/photo.jpg';
+<!-- ✅ Correct: Use @ for src/ imports -->import image from '@/assets/images/photo.jpg';
 
 <!-- ❌ Wrong: Relative path -->
 import image from '../assets/images/photo.jpg';

@@ -198,7 +198,7 @@ DEPLOYMENT.md            6 KB  ██████
 GETTING_STARTED.md       5 KB  █████
 ```
 
-**Total documentation: ~98 KB of knowledge!**
+**Total documentation: @98 KB of knowledge!**
 
 ---
 

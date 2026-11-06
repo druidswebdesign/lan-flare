@@ -117,8 +117,8 @@ export const headerData = {
 
 ```astro
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
 
 const metadata = {
   title: 'About Us',
@@ -142,9 +142,9 @@ const metadata = {
 
 ```astro
 ---
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
 ---
 
 <!-- Hero Section -->
@@ -155,7 +155,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
     { text: 'Get Started', href: '/contact', variant: 'primary' },
     { text: 'Learn More', href: '#features' },
   ]}
-  image={{ src: '~/assets/images/hero.jpg', alt: 'Hero' }}
+  image={{ src: '@/assets/images/hero.jpg', alt: 'Hero' }}
 />
 
 <!-- Features Section -->
@@ -209,7 +209,7 @@ const colors = {
 
 ```astro
 ---
-import Badge from '~/components/ui/Badge.astro';
+import Badge from '@/components/ui/Badge.astro';
 ---
 
 <Badge color="green" text="New" />
@@ -282,7 +282,7 @@ Defined in `src/assets/styles/tailwind.css`:
 ```astro
 ---
 import { Image } from 'astro:assets';
-import heroImage from '~/assets/images/hero.jpg';
+import heroImage from '@/assets/images/hero.jpg';
 ---
 
 <Image src={heroImage} alt="Descriptive alt text" width={1200} height={600} loading="eager" quality={80} />
@@ -319,7 +319,7 @@ import { Image } from 'astro:assets';
 publishDate: 2026-01-21T00:00:00Z
 title: 'My Blog Post Title'
 excerpt: 'A short excerpt (1-2 sentences)'
-image: '~/assets/images/blog/post-1.jpg'
+image: '@/assets/images/blog/post-1.jpg'
 category: 'Tutorials'
 tags:
   - astro
@@ -369,7 +369,7 @@ const metadata = {
     type: 'article',
     images: [
       {
-        url: '~/assets/images/og-image.jpg',
+        url: '@/assets/images/og-image.jpg',
         width: 1200,
         height: 628,
       },
@@ -466,7 +466,7 @@ npm run build
 ### Images Not Loading
 
 ```astro
-<!-- ✅ Use tilde (~) for src/ imports -->import image from '~/assets/images/photo.jpg';
+<!-- ✅ Use tilde (@) for src/ imports -->import image from '@/assets/images/photo.jpg';
 
 <!-- ❌ Don't use relative paths -->
 import image from '../assets/images/photo.jpg';

@@ -20,13 +20,13 @@ This guide documents all reusable functions, components, pages, utils, and asset
 
 ## Utility Functions
 
-### Date & Time Utilities (`~/utils/utils.ts`)
+### Date & Time Utilities (`@/utils/utils.ts`)
 - **`formatter: Intl.DateTimeFormat`** - Date formatter instance
 - **`getFormattedDate(date: Date): string`** - Format date using configured locale
 - **`trim(str: string, ch?: string): string`** - Trim characters from both ends of string
 - **`toUiAmount(amount: number): string`** - Format numbers as K/M/B (e.g., 1500 → 1.5K)
 
-### Permalink Utilities (`~/utils/permalinks.ts`)
+### Permalink Utilities (`@/utils/permalinks.ts`)
 - **`getPermalink(slug: string, type: string): string`** - Generate permalink for page/blog/category/tag/asset
 - **`getHomePermalink(): string`** - Get home page URL
 - **`getBlogPermalink(): string`** - Get blog listing URL
@@ -35,7 +35,7 @@ This guide documents all reusable functions, components, pages, utils, and asset
 - **`cleanSlug(text: string): string`** - Clean and slugify text
 - **`applyGetPermalinks(menu: object): object`** - Apply permalinks to navigation menu
 
-### Blog Utilities (`~/utils/blog.ts`)
+### Blog Utilities (`@/utils/blog.ts`)
 - **`fetchPosts(): Promise<Array<Post>>`** - Fetch all blog posts
 - **`findPostsBySlugs(slugs: Array<string>): Promise<Array<Post>>`** - Find posts by slugs
 - **`findPostsByIds(ids: Array<string>): Promise<Array<Post>>`** - Find posts by IDs
@@ -46,16 +46,16 @@ This guide documents all reusable functions, components, pages, utils, and asset
 - **`getStaticPathsBlogTag({ paginate })`** - Generate static paths for tags
 - **`getRelatedPosts(originalPost: Post, maxResults): Promise<Post[]>`** - Get related posts
 
-### Image Utilities (`~/utils/images.ts`)
+### Image Utilities (`@/utils/images.ts`)
 - **`fetchLocalImages(): Promise<Record<string, Function>>`** - Fetch all local images
 - **`findImage(imagePath): Promise<string | ImageMetadata | undefined>`** - Find image by path
 - **`adaptOpenGraphImages(openGraph: OpenGraph): Promise<OpenGraph>`** - Adapt OG images for metadata
 
-### Directory Utilities (`~/utils/directories.ts`)
+### Directory Utilities (`@/utils/directories.ts`)
 - **`getProjectRootDir(): string`** - Get project root directory path
 - **`getRelativeUrlByFilePath(filepath: string): string`** - Convert filepath to relative URL
 
-### Frontmatter Plugins (`~/utils/frontmatter.ts`)
+### Frontmatter Plugins (`@/utils/frontmatter.ts`)
 - **`readingTimeRemarkPlugin: RemarkPlugin`** - Add reading time to posts
 - **`responsiveTablesRehypePlugin: RehypePlugin`** - Wrap tables for responsiveness
 - **`lazyImagesRehypePlugin: RehypePlugin`** - Add lazy loading to images
@@ -64,7 +64,7 @@ This guide documents all reusable functions, components, pages, utils, and asset
 
 ## Constants & Configuration
 
-### Site Constants (`~/constants.ts`)
+### Site Constants (`@/constants.ts`)
 - **`SITE_NAME`** - Site name constant
 - **`SITE_DESCRIPTION`** - Site description
 - **`IS_PRODUCTION`** - Production environment flag
@@ -77,7 +77,7 @@ This guide documents all reusable functions, components, pages, utils, and asset
 - **`SOCIAL_HANDLES`** - Social media handles
 - **`DEFAULT_OG_IMAGE`** - Default OG image dimensions
 
-### Site Config (`~/config.yaml`)
+### Site Config (`@/config.yaml`)
 - `site` - Site name, URL, base path, trailing slash
 - `metadata` - Title, description, robots, OpenGraph, Twitter
 - `i18n` - Language, text direction
@@ -85,13 +85,13 @@ This guide documents all reusable functions, components, pages, utils, and asset
 - `analytics` - Analytics vendor configuration
 - `ui.theme` - Default theme (system/light/dark)
 
-### Navigation Data (`~/navigation.ts`)
+### Navigation Data (`@/navigation.ts`)
 - **`headerData`** - Header navigation links and actions
 - **`footerData`** - Footer links, social links, secondary links, footnote
 
 ---
 
-## Type Definitions (`~/types.d.ts`)
+## Type Definitions (`@/types.d.ts`)
 
 ### Core Types
 - **`Post`** - Blog post structure (id, slug, title, excerpt, image, category, tags, author, publishDate, etc.)
@@ -129,7 +129,7 @@ This guide documents all reusable functions, components, pages, utils, and asset
 
 ## UI Components
 
-### Button (`~/components/ui/Button.astro`)
+### Button (`@/components/ui/Button.astro`)
 **Variants:** `primary`, `secondary`, `tertiary`, `link`
 
 ```astro
@@ -145,7 +145,7 @@ This guide documents all reusable functions, components, pages, utils, and asset
 - `type` - Button type (button/submit/reset)
 - `class` - Additional CSS classes
 
-### Headline (`~/components/ui/Headline.astro`)
+### Headline (`@/components/ui/Headline.astro`)
 Standard section headline with title, subtitle, and tagline
 
 ```astro
@@ -163,7 +163,7 @@ Standard section headline with title, subtitle, and tagline
 - `tagline` - Small uppercase tagline
 - `classes` - Custom classes for container, title, subtitle
 
-### ItemGrid (`~/components/ui/ItemGrid.astro`)
+### ItemGrid (`@/components/ui/ItemGrid.astro`)
 Grid layout for feature items
 
 ```astro
@@ -184,7 +184,7 @@ Grid layout for feature items
 - `defaultIcon` - Default icon for items without one
 - `classes` - Custom classes for container, panel, title, description, icon, action
 
-### WidgetWrapper (`~/components/ui/WidgetWrapper.astro`)
+### WidgetWrapper (`@/components/ui/WidgetWrapper.astro`)
 Container wrapper for widgets with background and scroll offset
 
 ```astro
@@ -200,7 +200,7 @@ Container wrapper for widgets with background and scroll offset
 - `bg` - Custom background (slot or HTML)
 - `as` - HTML tag (default: 'section')
 
-### Form (`~/components/ui/Form.astro`)
+### Form (`@/components/ui/Form.astro`)
 Form container with inputs, textarea, disclaimer, and submit button
 
 ```astro
@@ -223,23 +223,23 @@ Form container with inputs, textarea, disclaimer, and submit button
 - `button` - Submit button text
 - `description` - Form description
 
-### Background (`~/components/ui/Background.astro`)
+### Background (`@/components/ui/Background.astro`)
 Background component for widgets
 
-### DListItem (`~/components/ui/DListItem.astro`)
+### DListItem (`@/components/ui/DListItem.astro`)
 Definition list item component
 
-### ItemGrid2 (`~/components/ui/ItemGrid2.astro`)
+### ItemGrid2 (`@/components/ui/ItemGrid2.astro`)
 Alternative item grid layout
 
-### Timeline (`~/components/ui/Timeline.astro`)
+### Timeline (`@/components/ui/Timeline.astro`)
 Timeline component for sequential content
 
 ---
 
 ## Widget Components
 
-### Hero (`~/components/widgets/Hero.astro`)
+### Hero (`@/components/widgets/Hero.astro`)
 Main hero section with title, subtitle, actions, and image
 
 ```astro
@@ -249,7 +249,7 @@ Main hero section with title, subtitle, actions, and image
     { variant: 'primary', text: 'Get Started', href: '/start' },
     { variant: 'secondary', text: 'Learn More', href: '#features' }
   ]}
-  image={{ src: '~/assets/images/hero.png', alt: 'Hero Image' }}
+  image={{ src: '@/assets/images/hero.png', alt: 'Hero Image' }}
 >
   <Fragment slot="title">Main Heading</Fragment>
   <Fragment slot="subtitle">Hero subtitle description</Fragment>
@@ -258,13 +258,13 @@ Main hero section with title, subtitle, actions, and image
 
 **Slots:** `title`, `subtitle`, `content`, `actions`, `image`, `bg`
 
-### Hero2 (`~/components/widgets/Hero2.astro`)
+### Hero2 (`@/components/widgets/Hero2.astro`)
 Alternative hero layout
 
-### HeroText (`~/components/widgets/HeroText.astro`)
+### HeroText (`@/components/widgets/HeroText.astro`)
 Text-only hero section
 
-### Features (`~/components/widgets/Features.astro`)
+### Features (`@/components/widgets/Features.astro`)
 Features section with icon grid
 
 ```astro
@@ -283,13 +283,13 @@ Features section with icon grid
 />
 ```
 
-### Features2 (`~/components/widgets/Features2.astro`)
+### Features2 (`@/components/widgets/Features2.astro`)
 Alternative features layout
 
-### Features3 (`~/components/widgets/Features3.astro`)
+### Features3 (`@/components/widgets/Features3.astro`)
 Another features variant
 
-### Stats (`~/components/widgets/Stats.astro`)
+### Stats (`@/components/widgets/Stats.astro`)
 Statistics/metrics display
 
 ```astro
@@ -304,7 +304,7 @@ Statistics/metrics display
 />
 ```
 
-### Pricing (`~/components/widgets/Pricing.astro`)
+### Pricing (`@/components/widgets/Pricing.astro`)
 Pricing table/cards
 
 ```astro
@@ -339,7 +339,7 @@ Pricing table/cards
 />
 ```
 
-### Testimonials (`~/components/widgets/Testimonials.astro`)
+### Testimonials (`@/components/widgets/Testimonials.astro`)
 Customer testimonials section
 
 ```astro
@@ -353,14 +353,14 @@ Customer testimonials section
       testimonial: 'This is amazing and changed my life.',
       name: 'John Doe',
       job: 'CEO',
-      image: { src: '~/assets/images/avatar1.jpg', alt: 'John' }
+      image: { src: '@/assets/images/avatar1.jpg', alt: 'John' }
     }
   ]}
   callToAction={{ text: 'Read More Reviews', href: '/reviews' }}
 />
 ```
 
-### Brands (`~/components/widgets/Brands.astro`)
+### Brands (`@/components/widgets/Brands.astro`)
 Logo/partner showcase
 
 ```astro
@@ -371,7 +371,7 @@ Logo/partner showcase
 />
 ```
 
-### FAQs (`~/components/widgets/FAQs.astro`)
+### FAQs (`@/components/widgets/FAQs.astro`)
 FAQ accordion section
 
 ```astro
@@ -387,7 +387,7 @@ FAQ accordion section
 />
 ```
 
-### Steps (`~/components/widgets/Steps.astro`)
+### Steps (`@/components/widgets/Steps.astro`)
 Step-by-step guide section
 
 ```astro
@@ -399,15 +399,15 @@ Step-by-step guide section
     { title: 'Step 3', description: 'Third step description', icon: 'tabler:3' }
   ]}
   callToAction={{ text: 'Get Started', href: '/start' }}
-  image={{ src: '~/assets/images/steps.jpg', alt: 'Steps' }}
+  image={{ src: '@/assets/images/steps.jpg', alt: 'Steps' }}
   isReversed={false}
 />
 ```
 
-### Steps2 (`~/components/widgets/Steps2.astro`)
+### Steps2 (`@/components/widgets/Steps2.astro`)
 Alternative steps layout
 
-### Content (`~/components/widgets/Content.astro`)
+### Content (`@/components/widgets/Content.astro`)
 Content with text and image side-by-side
 
 ```astro
@@ -419,7 +419,7 @@ Content with text and image side-by-side
     { title: 'Point 1', description: 'Description 1' },
     { title: 'Point 2', description: 'Description 2' }
   ]}
-  image={{ src: '~/assets/images/content.jpg', alt: 'Content' }}
+  image={{ src: '@/assets/images/content.jpg', alt: 'Content' }}
   isReversed={true}
   isAfterContent={true}
 >
@@ -427,7 +427,7 @@ Content with text and image side-by-side
 </Content>
 ```
 
-### Contact (`~/components/widgets/Contact.astro`)
+### Contact (`@/components/widgets/Contact.astro`)
 Contact form section
 
 ```astro
@@ -444,7 +444,7 @@ Contact form section
 />
 ```
 
-### CallToAction (`~/components/widgets/CallToAction.astro`)
+### CallToAction (`@/components/widgets/CallToAction.astro`)
 CTA banner section
 
 ```astro
@@ -459,7 +459,7 @@ CTA banner section
 />
 ```
 
-### BlogLatestPosts (`~/components/widgets/BlogLatestPosts.astro`)
+### BlogLatestPosts (`@/components/widgets/BlogLatestPosts.astro`)
 Latest blog posts grid
 
 ```astro
@@ -469,10 +469,10 @@ Latest blog posts grid
 />
 ```
 
-### BlogHighlightedPosts (`~/components/widgets/BlogHighlightedPosts.astro`)
+### BlogHighlightedPosts (`@/components/widgets/BlogHighlightedPosts.astro`)
 Highlighted/featured blog posts
 
-### Header (`~/components/widgets/Header.astro`)
+### Header (`@/components/widgets/Header.astro`)
 Site navigation header with links, actions, theme toggle
 
 ```astro
@@ -485,7 +485,7 @@ Site navigation header with links, actions, theme toggle
 />
 ```
 
-### Footer (`~/components/widgets/Footer.astro`)
+### Footer (`@/components/widgets/Footer.astro`)
 Site footer with links, social icons, copyright
 
 ```astro
@@ -497,10 +497,10 @@ Site footer with links, social icons, copyright
 />
 ```
 
-### Announcement (`~/components/widgets/Announcement.astro`)
+### Announcement (`@/components/widgets/Announcement.astro`)
 Top announcement banner
 
-### Note (`~/components/widgets/Note.astro`)
+### Note (`@/components/widgets/Note.astro`)
 Simple note/info banner
 
 ```astro
@@ -511,50 +511,50 @@ Simple note/info banner
 
 ## Blog Components
 
-### Grid (`~/components/blog/Grid.astro`)
+### Grid (`@/components/blog/Grid.astro`)
 Blog post grid layout
 
 ```astro
 <Grid posts={postsArray} />
 ```
 
-### List (`~/components/blog/List.astro`)
+### List (`@/components/blog/List.astro`)
 Blog post list layout
 
-### GridItem (`~/components/blog/GridItem.astro`)
+### GridItem (`@/components/blog/GridItem.astro`)
 Individual blog post card
 
-### ListItem (`~/components/blog/ListItem.astro`)
+### ListItem (`@/components/blog/ListItem.astro`)
 Individual blog post list item
 
-### SinglePost (`~/components/blog/SinglePost.astro`)
+### SinglePost (`@/components/blog/SinglePost.astro`)
 Single blog post display
 
-### Headline (`~/components/blog/Headline.astro`)
+### Headline (`@/components/blog/Headline.astro`)
 Blog section headline
 
-### Tags (`~/components/blog/Tags.astro`)
+### Tags (`@/components/blog/Tags.astro`)
 Post tags display
 
-### Pagination (`~/components/blog/Pagination.astro`)
+### Pagination (`@/components/blog/Pagination.astro`)
 Pagination controls
 
-### RelatedPosts (`~/components/blog/RelatedPosts.astro`)
+### RelatedPosts (`@/components/blog/RelatedPosts.astro`)
 Related posts section
 
-### ToBlogLink (`~/components/blog/ToBlogLink.astro`)
+### ToBlogLink (`@/components/blog/ToBlogLink.astro`)
 Link back to blog listing
 
 ---
 
 ## Common Components
 
-### Image (`~/components/common/Image.astro`)
+### Image (`@/components/common/Image.astro`)
 Optimized image component with lazy loading
 
 ```astro
 <Image
-  src="~/assets/images/image.jpg"
+  src="@/assets/images/image.jpg"
   alt="Image description"
   widths={[400, 768, 1024]}
   sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, 1024px"
@@ -564,44 +564,44 @@ Optimized image component with lazy loading
 />
 ```
 
-### ToggleTheme (`~/components/common/ToggleTheme.astro`)
+### ToggleTheme (`@/components/common/ToggleTheme.astro`)
 Dark/light theme toggle button
 
-### ToggleMenu (`~/components/common/ToggleMenu.astro`)
+### ToggleMenu (`@/components/common/ToggleMenu.astro`)
 Mobile menu toggle button
 
-### Metadata (`~/components/common/Metadata.astro`)
+### Metadata (`@/components/common/Metadata.astro`)
 Page metadata (SEO, OG tags)
 
-### SiteVerification (`~/components/common/SiteVerification.astro`)
+### SiteVerification (`@/components/common/SiteVerification.astro`)
 Search engine verification meta tags
 
-### CommonMeta (`~/components/common/CommonMeta.astro`)
+### CommonMeta (`@/components/common/CommonMeta.astro`)
 Common meta tags
 
-### Analytics (`~/components/common/Analytics.astro`)
+### Analytics (`@/components/common/Analytics.astro`)
 Analytics scripts (Google Analytics, etc.)
 
-### SplitbeeAnalytics (`~/components/common/SplitbeeAnalytics.astro`)
+### SplitbeeAnalytics (`@/components/common/SplitbeeAnalytics.astro`)
 Splitbee analytics integration
 
-### LenisScroll (`~/components/common/LenisScroll.astro`)
+### LenisScroll (`@/components/common/LenisScroll.astro`)
 Lenis smooth scroll integration
 
-### ApplyColorMode (`~/components/common/ApplyColorMode.astro`)
+### ApplyColorMode (`@/components/common/ApplyColorMode.astro`)
 Apply color mode to page
 
-### SocialShare (`~/components/common/SocialShare.astro`)
+### SocialShare (`@/components/common/SocialShare.astro`)
 Social sharing buttons
 
-### BasicScripts (`~/components/common/BasicScripts.astro`)
+### BasicScripts (`@/components/common/BasicScripts.astro`)
 Basic JavaScript functionality
 
 ---
 
 ## Layouts
 
-### Layout (`~/layouts/Layout.astro`)
+### Layout (`@/layouts/Layout.astro`)
 Base layout with metadata, analytics, verification
 
 ```astro
@@ -615,7 +615,7 @@ Base layout with metadata, analytics, verification
 </Layout>
 ```
 
-### PageLayout (`~/layouts/PageLayout.astro`)
+### PageLayout (`@/layouts/PageLayout.astro`)
 Standard page layout with header, main, footer
 
 ```astro
@@ -629,7 +629,7 @@ Standard page layout with header, main, footer
 </PageLayout>
 ```
 
-### LandingLayout (`~/layouts/LandingLayout.astro`)
+### LandingLayout (`@/layouts/LandingLayout.astro`)
 Landing page layout (minimal header)
 
 ```astro
@@ -640,7 +640,7 @@ Landing page layout (minimal header)
 </LandingLayout>
 ```
 
-### MarkdownLayout (`~/layouts/MarkdownLayout.astro`)
+### MarkdownLayout (`@/layouts/MarkdownLayout.astro`)
 Markdown/blog post layout
 
 ---
@@ -783,7 +783,7 @@ This project uses **astro-icon** for icons. Icon names follow the format `vendor
 - `light:only` - Light mode only, no toggle
 - `dark:only` - Dark mode only, no toggle
 
-Configure in `~/config.yaml`:
+Configure in `@/config.yaml`:
 ```yaml
 ui:
   theme: 'system'
@@ -808,10 +808,10 @@ touch src/pages/landing/my-product.astro
 ### Step 2: Use Landing Layout
 ```astro
 ---
-import Layout from '~/layouts/LandingLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '@/layouts/LandingLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'My Product - Landing Page',
@@ -845,10 +845,10 @@ const metadata = {
 
 ### Step 3: Add Custom Assets
 - Place images in `src/assets/images/`
-- Reference with `~/assets/images/your-image.png`
+- Reference with `@/assets/images/your-image.png`
 
 ### Step 4: Update Navigation
-Edit `~/navigation.ts` to add links to your new page
+Edit `@/navigation.ts` to add links to your new page
 
 ---
 
@@ -866,7 +866,7 @@ npm run fix              # Auto-fix linting and formatting
 
 ## Best Practices
 
-1. **Use Path Aliases** - Always import with `~/` prefix for `src/` files
+1. **Use Path Aliases** - Always import with `@/` prefix for `src/` files
 2. **Type Safety** - Define Props interfaces in component frontmatter
 3. **Responsive Design** - Use mobile-first Tailwind classes (`text-sm md:text-base`)
 4. **Dark Mode** - Always include dark mode variants (`dark:bg-slate-900`)

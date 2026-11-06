@@ -147,8 +147,8 @@ npm run deploy          # Build + deploy to Cloudflare Pages
 ```astro
 ---
 // src/components/widgets/MyWidget.astro
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '@/components/ui/WidgetWrapper.astro';
+import Headline from '@/components/ui/Headline.astro';
 
 export interface Props {
   title?: string;
@@ -168,11 +168,11 @@ const { title, subtitle, id } = Astro.props;
 ```
 
 ### Import Aliases
-Always use `~/` for src imports:
+Always use `@/` for src imports:
 ```typescript
-import Hero from '~/components/widgets/Hero.astro';
-import { SITE } from '~/utils/config';
-import type { MetaData } from '~/types';
+import Hero from '@/components/widgets/Hero.astro';
+import { SITE } from '@/utils/config';
+import type { MetaData } from '@/types';
 ```
 
 ### Config Access

@@ -129,7 +129,7 @@
 - Cloudflare runtime types
 - Environment variable types
 - Strict null checks enabled
-- Path aliases configured (~/* → src/*)
+- Path aliases configured (@/* → src/*)
 ```
 
 **Benefits:**

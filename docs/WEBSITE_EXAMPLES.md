@@ -56,15 +56,15 @@ import '@fontsource-variable/inter';
 
 ```astro
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Features from '@/components/widgets/Features.astro';
+import Features2 from '@/components/widgets/Features2.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import Pricing from '@/components/widgets/Pricing.astro';
+import Testimonials from '@/components/widgets/Testimonials.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
+import FAQs from '@/components/widgets/FAQs.astro';
 
 const metadata = {
   title: 'CloudTask - Project Management Made Simple',
@@ -91,7 +91,7 @@ const metadata = {
       },
     ]}
     image={{ 
-      src: '~/assets/images/saas-dashboard.png', 
+      src: '@/assets/images/saas-dashboard.png', 
       alt: 'CloudTask Dashboard' 
     }}
   >
@@ -249,7 +249,7 @@ const metadata = {
         name: 'Sarah Johnson',
         job: 'VP of Engineering at TechCorp',
         image: {
-          src: '~/assets/images/testimonials/sarah.jpg',
+          src: '@/assets/images/testimonials/sarah.jpg',
           alt: 'Sarah Johnson',
         },
       },
@@ -258,7 +258,7 @@ const metadata = {
         name: 'Michael Chen',
         job: 'Creative Director at DesignStudio',
         image: {
-          src: '~/assets/images/testimonials/michael.jpg',
+          src: '@/assets/images/testimonials/michael.jpg',
           alt: 'Michael Chen',
         },
       },
@@ -437,16 +437,16 @@ const { title, subtitle, projects } = Astro.props;
 
 ```astro
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import PortfolioGrid from '~/components/widgets/PortfolioGrid.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import HeroText from '@/components/widgets/HeroText.astro';
+import PortfolioGrid from '@/components/widgets/PortfolioGrid.astro';
+import Testimonials from '@/components/widgets/Testimonials.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
 
 // Import your project images
-import project1 from '~/assets/images/portfolio/project-1.jpg';
-import project2 from '~/assets/images/portfolio/project-2.jpg';
-import project3 from '~/assets/images/portfolio/project-3.jpg';
+import project1 from '@/assets/images/portfolio/project-1.jpg';
+import project2 from '@/assets/images/portfolio/project-2.jpg';
+import project3 from '@/assets/images/portfolio/project-3.jpg';
 
 const metadata = {
   title: 'Alex Rivera - Creative Designer & Developer',
@@ -609,15 +609,15 @@ import '@fontsource-variable/dm-sans';
 
 ```astro
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Brands from '~/components/widgets/Brands.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import Hero from '@/components/widgets/Hero.astro';
+import Brands from '@/components/widgets/Brands.astro';
+import Features from '@/components/widgets/Features.astro';
+import Steps from '@/components/widgets/Steps.astro';
+import Content from '@/components/widgets/Content.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import Testimonials from '@/components/widgets/Testimonials.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Digital Agency - We Build Brands That Stand Out',
@@ -647,9 +647,9 @@ const metadata = {
   <Brands
     title="Trusted by Industry Leaders"
     images={[
-      { src: '~/assets/images/clients/client-1.svg', alt: 'Client 1' },
-      { src: '~/assets/images/clients/client-2.svg', alt: 'Client 2' },
-      { src: '~/assets/images/clients/client-3.svg', alt: 'Client 3' },
+      { src: '@/assets/images/clients/client-1.svg', alt: 'Client 1' },
+      { src: '@/assets/images/clients/client-2.svg', alt: 'Client 2' },
+      { src: '@/assets/images/clients/client-3.svg', alt: 'Client 3' },
     ]}
   />
 
@@ -802,10 +802,10 @@ import '@fontsource-variable/literata';
 
 ```astro
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from '@/layouts/PageLayout.astro';
+import HeroText from '@/components/widgets/HeroText.astro';
+import BlogLatestPosts from '@/components/widgets/BlogLatestPosts.astro';
+import CallToAction from '@/components/widgets/CallToAction.astro';
 ---
 
 <Layout>
@@ -888,7 +888,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
   </div>
   <div class="relative">
     <Image
-      src="~/assets/images/hero.jpg"
+      src="@/assets/images/hero.jpg"
       alt="Hero"
       class="object-cover w-full h-full"
     />

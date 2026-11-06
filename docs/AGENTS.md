@@ -45,12 +45,12 @@ npm run deploy           # Build and deploy to Cloudflare Pages
 
 ### Import Conventions
 
-1. **Use path aliases** - Always use `~/*` for `src/*` imports:
+1. **Use path aliases** - Always use `@/*` for `src/*` imports:
 
 ```typescript
-import Layout from '~/layouts/PageLayout.astro';
-import { fetchPosts } from '~/utils/blog';
-import type { MetaData } from '~/types';
+import Layout from '@/layouts/PageLayout.astro';
+import { fetchPosts } from '@/utils/blog';
+import type { MetaData } from '@/types';
 ```
 
 2. **Import order:**
@@ -60,11 +60,11 @@ import type { MetaData } from '~/types';
 import { getCollection } from 'astro:content';
 
 // 2. Internal components/utilities
-import Hero from '~/components/widgets/Hero.astro';
-import { SITE } from '~/constants';
+import Hero from '@/components/widgets/Hero.astro';
+import { SITE } from '@/constants';
 
 // 3. Type imports (use 'type' keyword)
-import type { Post } from '~/types';
+import type { Post } from '@/types';
 ```
 
 3. **Virtual modules** - Config accessed via virtual module:
@@ -98,8 +98,8 @@ const { title, subtitle, items = [] } = Astro.props;
 
 ```astro
 ---
-import Component from '~/components/Component.astro';
-import type { Props } from '~/types';
+import Component from '@/components/Component.astro';
+import type { Props } from '@/types';
 
 export interface Props {
   title: string;
@@ -235,7 +235,7 @@ src/
 ### Adding a New Page
 
 1. Create `.astro` file in `src/pages/`
-2. Import and use a layout: `import Layout from '~/layouts/PageLayout.astro';`
+2. Import and use a layout: `import Layout from '@/layouts/PageLayout.astro';`
 3. Add metadata via layout props
 4. Run `npm run check` to validate
 
